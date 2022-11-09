@@ -7,6 +7,12 @@ function isItANumber(input) {
 }
 
 function isRowFilledWithNumbers(sudokuRow) {
-  return true;
+  for (let index = 0; index < sudokuRow.length; index++) {
+    const sudokuCell = sudokuRow[index];
+    if (isItANumber(sudokuCell) == false) {
+      return false
+    }
+  }
+      return true
 }
 module.exports = { checkIfSudokuRowContains9Elements, isItANumber, isRowFilledWithNumbers };
