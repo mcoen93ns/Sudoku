@@ -13,12 +13,13 @@ DONE '1' --> true
    DONE [''] --> false
    DONE [1,2,3,4,5,6,7,8,9] --> true
 
-## 🍅 2: jumpstart new kata and start coding!
+## 🍅 2: horizontal rows!
 
-1. Horizontal row: check if row contains 9 numbers
-   [1,2,3,4,5,6,7,'',9] --> false
-   [1,2,3,4,5,6,7,8,9,10] --> false
-
-2. Horizontal row: check if row contains numbers 1-9
+1. Horizontal row: check if row contains 9 elements
+   [1,2,3,4,5,6,7,8,9,10] --> false ✔️
+   [1,2,3,4,5,6,7,8] --> false 
    [1,2,3,4,5,6,7,8,9] --> true
-   [1,2,3,4,5,6,7,8,8] --> false
+
+2. Horizontal row: check if all elements are numbers
+   [1,2,3,4,5,6,7,8,9] --> true
+   [1,2,3,4,5,6,7,8,''] --> false

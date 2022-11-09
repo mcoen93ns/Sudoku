@@ -6,4 +6,7 @@ function isItANumber(input) {
   return /^\d+$/.test(input);
 }
 
-module.exports = { checkIfSudokuRowContains9Elements, isItANumber };
+function isRowFilledWithNumbers(sudokuRow) {
+  return true;
+}
+module.exports = { checkIfSudokuRowContains9Elements, isItANumber, isRowFilledWithNumbers };
