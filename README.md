@@ -3,9 +3,9 @@
 Atomic behaviors:
 
 Check if an input is a number or not
-'' --> false
-1 --> true
-'1' --> false
+DONE '' --> false
+DONE 1 --> true
+DONE '1' --> true
 
 1. Horizontal row: check if row contains 9 numbers
    DONE [''] --> false
