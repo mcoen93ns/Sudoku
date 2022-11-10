@@ -1,4 +1,5 @@
 # Kata Sudoku
+https://www.codewars.com/kata/53db96041f1a7d32dc0004d2
 
 ## first 🍅: jumpstart new kata and start coding!
 
@@ -22,4 +23,13 @@ DONE '1' --> true
 
 2. Horizontal row: check if all elements are numbers
    [1,2,3,4,5,6,7,8,9] --> true ✔
-   [1,2,3,4,5,6,7,8,''] --> false
+   [1,2,3,4,5,6,7,8,''] --> false ✔
+
+## 🍅 4: Horizontal row: check if complete numbers 1-9
+
+1. Horizontal row: check if row contains number 1-9
+   [1,2,3,4,5,6,7,8,9] --> true ✔
+   [1,2,3,99,5,6,7,8,9] --> false 
+   [1,2,2,4,5,6,7,8,9] --> false 
+
+   

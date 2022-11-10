@@ -15,4 +15,21 @@ function isRowFilledWithNumbers(sudokuRow) {
   }
       return true
 }
-module.exports = { checkIfSudokuRowContains9Elements, isItANumber, isRowFilledWithNumbers };
+
+function isRowFilledWithNumbersOneToNine(sudokuRow) {
+  const numbersOneToNine=[1,2,3,4,5,6,7,8,9]
+  if(sudokuRow.every(r => numbersOneToNine.includes(r))){
+    return true
+  }else{
+    return false
+  }
+
+}
+  
+
+module.exports = { 
+  checkIfSudokuRowContains9Elements,
+  isItANumber,
+  isRowFilledWithNumbers,
+  isRowFilledWithNumbersOneToNine
+};
