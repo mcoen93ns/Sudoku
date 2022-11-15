@@ -4,6 +4,7 @@ const {
   isRowFilledWithNumbers,
   isRowFilledWithNumbersOneToNine,
   doesRowContainDuplicates,
+  isThisRowComplete,
 } = require("../src/template");
 
 describe("This is a testsuite that describes the functionality to validate if a Sudoku board is complete and valid", () => {
@@ -68,6 +69,24 @@ describe("This is a testsuite that describes the functionality to validate if a 
       it(`[1,2,3,4,5,6,7,8,9] --> false`, () => {
         const sudokuRow = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         expect(doesRowContainDuplicates(sudokuRow)).toEqual(false);
+      });
+    });
+    describe("We can then validate whether a horizontal row is complete ", () => {
+      it("[1,2,3,4,5,6,7,8,9] -> true", () => {
+        const sudokuRow = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        expect(isThisRowComplete(sudokuRow)).toEqual(true);
+      });
+      it("[1,5,3,4,2,6,7,8,9] -> true", () => {
+        const sudokuRow = [1, 5, 3, 4, 2, 6, 7, 8, 9];
+        expect(isThisRowComplete(sudokuRow)).toEqual(true);
+      });
+      it("[1,2,4,5,6,7,8,9] -> false", () => {
+        const sudokuRow = [1, 2, 4, 5, 6, 7, 8, 9];
+        expect(isThisRowComplete(sudokuRow)).toEqual(false);
+      });
+      it("[1,5,5,4,2,6,7,8,9] -> false", () => {
+        const sudokuRow = [1, 5, 5, 4, 2, 6, 7, 8, 9];
+        expect(isThisRowComplete(sudokuRow)).toEqual(false);
       });
     });
   });

@@ -7,7 +7,7 @@ function isItANumber(input) {
 }
 
 function isRowFilledWithNumbers(sudokuRow) {
-  for (let index = 0; index < sudokuRow.length; index + 1) {
+  for (let index = 0; index < sudokuRow.length; index += 1) {
     const sudokuCell = sudokuRow[index];
     if (isItANumber(sudokuCell) === false) {
       return false;
@@ -31,10 +31,19 @@ function doesRowContainDuplicates(sudokuRow) {
   return duplicates.length > 0;
 }
 
+function isThisRowComplete(sudokuRow) { 
+  return (
+    checkIfSudokuRowContains9Elements(sudokuRow) &&
+    isRowFilledWithNumbers(sudokuRow) &&
+    isRowFilledWithNumbersOneToNine(sudokuRow) &&
+    doesRowContainDuplicates(sudokuRow) === false)
+}
+
 module.exports = {
   checkIfSudokuRowContains9Elements,
   isItANumber,
   isRowFilledWithNumbers,
   isRowFilledWithNumbersOneToNine,
   doesRowContainDuplicates,
+  isThisRowComplete
 };

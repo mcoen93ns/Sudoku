@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668513362438" clover="3.2.0">
-  <project timestamp="1668513362438" name="All files">
-    <metrics statements="15" coveredstatements="15" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="7" elements="26" coveredelements="26" complexity="0" loc="15" ncloc="15" packages="1" files="1" classes="1"/>
-    <file name="template.js" path="C:\Users\mathi\Sudoku\src\template.js">
-      <metrics statements="15" coveredstatements="15" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="7"/>
-      <line num="2" count="3" type="stmt"/>
-      <line num="6" count="21" type="stmt"/>
-      <line num="10" count="2" type="stmt"/>
-      <line num="11" count="18" type="stmt"/>
-      <line num="12" count="18" type="cond" truecount="2" falsecount="0"/>
+<coverage generated="1668515230702" clover="3.2.0">
+  <project timestamp="1668515230703" name="All files">
+    <metrics statements="16" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="8" coveredmethods="8" elements="32" coveredelements="32" complexity="0" loc="16" ncloc="16" packages="1" files="1" classes="1"/>
+    <file name="template.js" path="C:\Users\MerijnTiebie\Documents\Repos\Sudoku\src\template.js">
+      <metrics statements="16" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="8" coveredmethods="8"/>
+      <line num="2" count="7" type="stmt"/>
+      <line num="6" count="48" type="stmt"/>
+      <line num="10" count="5" type="stmt"/>
+      <line num="11" count="45" type="stmt"/>
+      <line num="12" count="45" type="cond" truecount="2" falsecount="0"/>
       <line num="13" count="1" type="stmt"/>
-      <line num="16" count="1" type="stmt"/>
-      <line num="20" count="3" type="stmt"/>
-      <line num="21" count="22" type="cond" truecount="2" falsecount="0"/>
-      <line num="22" count="2" type="stmt"/>
+      <line num="16" count="4" type="stmt"/>
+      <line num="20" count="6" type="stmt"/>
+      <line num="21" count="49" type="cond" truecount="2" falsecount="0"/>
+      <line num="22" count="5" type="stmt"/>
       <line num="24" count="1" type="stmt"/>
-      <line num="28" count="2" type="stmt"/>
-      <line num="29" count="18" type="stmt"/>
-      <line num="31" count="2" type="stmt"/>
-      <line num="34" count="1" type="stmt"/>
+      <line num="28" count="5" type="stmt"/>
+      <line num="29" count="45" type="stmt"/>
+      <line num="31" count="5" type="stmt"/>
+      <line num="35" count="4" type="stmt"/>
+      <line num="42" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
