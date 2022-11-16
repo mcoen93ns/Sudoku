@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668515230702" clover="3.2.0">
-  <project timestamp="1668515230703" name="All files">
+<coverage generated="1668594732137" clover="3.2.0">
+  <project timestamp="1668594732138" name="All files">
     <metrics statements="16" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="8" coveredmethods="8" elements="32" coveredelements="32" complexity="0" loc="16" ncloc="16" packages="1" files="1" classes="1"/>
-    <file name="template.js" path="C:\Users\MerijnTiebie\Documents\Repos\Sudoku\src\template.js">
+    <file name="template.js" path="C:\Users\viavilan\Katas\Sudoku\src\template.js">
       <metrics statements="16" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="8" coveredmethods="8"/>
       <line num="2" count="7" type="stmt"/>
       <line num="6" count="48" type="stmt"/>

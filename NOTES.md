@@ -42,4 +42,8 @@ Horizontal row: check if complete (brings together the above atomics)
 [1,2,3,4,5,6,7,8,9] --> true ✔
 [1,5,3,4,2,6,7,8,9] --> true ✔
 [1,2,4,5,6,7,8,9] --> false ✔
-[1,5,5,4,2,6,7,8,9] --> false 🎈
+[1,5,5,4,2,6,7,8,9] --> false ✔
+
+## 🍅 5: Refactor code to generalize row routines
+
+

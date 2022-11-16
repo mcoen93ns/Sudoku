@@ -1,10 +1,10 @@
 const {
-  checkIfSudokuRowContains9Elements,
+  checkIfSudokuListContains9Elements,
   isItANumber,
-  isRowFilledWithNumbers,
-  isRowFilledWithNumbersOneToNine,
-  doesRowContainDuplicates,
-  isThisRowComplete,
+  isListFilledWithNumbers,
+  isListFilledWithNumbersOneToNine,
+  doesListContainDuplicates,
+  isThisListComplete,
 } = require("../src/template");
 
 describe("This is a testsuite that describes the functionality to validate if a Sudoku board is complete and valid", () => {
@@ -22,71 +22,71 @@ describe("This is a testsuite that describes the functionality to validate if a 
       expect(isItANumber(input)).toEqual(true);
     });
   });
-  describe("We want to start with checking the horizontal lines", () => {
-    describe("A horizontal line should contains 9 elements", () => {
+  describe("Sudoku is a game of rows, colums and blocks of nine numbers. The same rules apply for all these three elements. We'll refer to them as list of numbers. We want to start checking if they are complete", () => {
+    describe("A list should contain 9 elements", () => {
       it(`[1,2,3,4,5,6,7,8,9,10] --> false`, () => {
-        const sudokuRow = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        expect(checkIfSudokuRowContains9Elements(sudokuRow)).toEqual(false);
+        const sudokuList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        expect(checkIfSudokuListContains9Elements(sudokuList)).toEqual(false);
       });
       it(`[1,2,3,4,5,6,7,8] --> false`, () => {
-        const sudokuRow = [1, 2, 3, 4, 5, 6, 7, 8];
-        expect(checkIfSudokuRowContains9Elements(sudokuRow)).toEqual(false);
+        const sudokuList = [1, 2, 3, 4, 5, 6, 7, 8];
+        expect(checkIfSudokuListContains9Elements(sudokuList)).toEqual(false);
       });
       it(`[1,2,3,4,5,6,7,8,9] --> true`, () => {
-        const sudokuRow = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        expect(checkIfSudokuRowContains9Elements(sudokuRow)).toEqual(true);
+        const sudokuList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        expect(checkIfSudokuListContains9Elements(sudokuList)).toEqual(true);
       });
     });
-    describe("A row should only contain numbers", () => {
+    describe("A list should only contain numbers", () => {
       it(`[1,2,3,4,5,6,7,8,9] --> true`, () => {
-        const sudokuRow = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        expect(isRowFilledWithNumbers(sudokuRow)).toEqual(true);
+        const sudokuList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        expect(isListFilledWithNumbers(sudokuList)).toEqual(true);
       });
       it(`[1,2,3,4,5,6,7,8,''] --> false`, () => {
-        const sudokuRow = [1, 2, 3, 4, 5, 6, 7, 8, ""];
-        expect(isRowFilledWithNumbers(sudokuRow)).toEqual(false);
+        const sudokuList = [1, 2, 3, 4, 5, 6, 7, 8, ""];
+        expect(isListFilledWithNumbers(sudokuList)).toEqual(false);
       });
     });
-    describe("A row should only contain numbers 1-9", () => {
+    describe("A list should only contain numbers 1-9", () => {
       it(`[1,2,3,4,5,6,7,8,9] --> true`, () => {
-        const sudokuRow = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        expect(isRowFilledWithNumbersOneToNine(sudokuRow)).toEqual(true);
+        const sudokuList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        expect(isListFilledWithNumbersOneToNine(sudokuList)).toEqual(true);
       });
       it(`[1,2,3,99,5,6,7,8,9 ] --> false`, () => {
-        const sudokuRow = [1, 2, 3, 99, 5, 6, 7, 8, 9];
-        expect(isRowFilledWithNumbersOneToNine(sudokuRow)).toEqual(false);
+        const sudokuList = [1, 2, 3, 99, 5, 6, 7, 8, 9];
+        expect(isListFilledWithNumbersOneToNine(sudokuList)).toEqual(false);
       });
       it(`[1,2,2,4,5,6,7,8,9] --> true`, () => {
-        const sudokuRow = [1, 2, 2, 4, 5, 6, 7, 8, 9];
-        expect(isRowFilledWithNumbersOneToNine(sudokuRow)).toEqual(true);
+        const sudokuList = [1, 2, 2, 4, 5, 6, 7, 8, 9];
+        expect(isListFilledWithNumbersOneToNine(sudokuList)).toEqual(true);
       });
     });
-    describe("A row should not contain duplicate numbers", () => {
+    describe("A list should not contain duplicate numbers", () => {
       it(`[1,2,2,4,5,6,7,8,9] --> true`, () => {
-        const sudokuRow = [1, 2, 2, 4, 5, 6, 7, 8, 9];
-        expect(doesRowContainDuplicates(sudokuRow)).toEqual(true);
+        const sudokuList = [1, 2, 2, 4, 5, 6, 7, 8, 9];
+        expect(doesListContainDuplicates(sudokuList)).toEqual(true);
       });
       it(`[1,2,3,4,5,6,7,8,9] --> false`, () => {
-        const sudokuRow = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        expect(doesRowContainDuplicates(sudokuRow)).toEqual(false);
+        const sudokuList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        expect(doesListContainDuplicates(sudokuList)).toEqual(false);
       });
     });
-    describe("We can then validate whether a horizontal row is complete ", () => {
+    describe("We can then validate whether a list meets all criteria above ", () => {
       it("[1,2,3,4,5,6,7,8,9] -> true", () => {
-        const sudokuRow = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        expect(isThisRowComplete(sudokuRow)).toEqual(true);
+        const sudokuList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        expect(isThisListComplete(sudokuList)).toEqual(true);
       });
       it("[1,5,3,4,2,6,7,8,9] -> true", () => {
-        const sudokuRow = [1, 5, 3, 4, 2, 6, 7, 8, 9];
-        expect(isThisRowComplete(sudokuRow)).toEqual(true);
+        const sudokuList = [1, 5, 3, 4, 2, 6, 7, 8, 9];
+        expect(isThisListComplete(sudokuList)).toEqual(true);
       });
       it("[1,2,4,5,6,7,8,9] -> false", () => {
-        const sudokuRow = [1, 2, 4, 5, 6, 7, 8, 9];
-        expect(isThisRowComplete(sudokuRow)).toEqual(false);
+        const sudokuList = [1, 2, 4, 5, 6, 7, 8, 9];
+        expect(isThisListComplete(sudokuList)).toEqual(false);
       });
       it("[1,5,5,4,2,6,7,8,9] -> false", () => {
-        const sudokuRow = [1, 5, 5, 4, 2, 6, 7, 8, 9];
-        expect(isThisRowComplete(sudokuRow)).toEqual(false);
+        const sudokuList = [1, 5, 5, 4, 2, 6, 7, 8, 9];
+        expect(isThisListComplete(sudokuList)).toEqual(false);
       });
     });
   });

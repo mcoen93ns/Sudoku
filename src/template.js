@@ -1,4 +1,4 @@
-function checkIfSudokuRowContains9Elements(sudokuRow) {
+function checkIfSudokuListContains9Elements(sudokuRow) {
   return sudokuRow.length === 9;
 }
 
@@ -6,7 +6,7 @@ function isItANumber(input) {
   return /^\d+$/.test(input);
 }
 
-function isRowFilledWithNumbers(sudokuRow) {
+function isListFilledWithNumbers(sudokuRow) {
   for (let index = 0; index < sudokuRow.length; index += 1) {
     const sudokuCell = sudokuRow[index];
     if (isItANumber(sudokuCell) === false) {
@@ -16,7 +16,7 @@ function isRowFilledWithNumbers(sudokuRow) {
   return true;
 }
 
-function isRowFilledWithNumbersOneToNine(sudokuRow) {
+function isListFilledWithNumbersOneToNine(sudokuRow) {
   const numbersOneToNine = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   if (sudokuRow.every((r) => numbersOneToNine.includes(r))) {
     return true;
@@ -24,26 +24,26 @@ function isRowFilledWithNumbersOneToNine(sudokuRow) {
   return false;
 }
 
-function doesRowContainDuplicates(sudokuRow) {
+function doesListContainDuplicates(sudokuRow) {
   const duplicates = sudokuRow.filter(
     (item, index) => sudokuRow.indexOf(item) !== index
   );
   return duplicates.length > 0;
 }
 
-function isThisRowComplete(sudokuRow) { 
+function isThisListComplete(sudokuRow) { 
   return (
-    checkIfSudokuRowContains9Elements(sudokuRow) &&
-    isRowFilledWithNumbers(sudokuRow) &&
-    isRowFilledWithNumbersOneToNine(sudokuRow) &&
-    doesRowContainDuplicates(sudokuRow) === false)
+    checkIfSudokuListContains9Elements(sudokuRow) &&
+    isListFilledWithNumbers(sudokuRow) &&
+    isListFilledWithNumbersOneToNine(sudokuRow) &&
+    doesListContainDuplicates(sudokuRow) === false)
 }
 
 module.exports = {
-  checkIfSudokuRowContains9Elements,
+  checkIfSudokuListContains9Elements,
   isItANumber,
-  isRowFilledWithNumbers,
-  isRowFilledWithNumbersOneToNine,
-  doesRowContainDuplicates,
-  isThisRowComplete
+  isListFilledWithNumbers,
+  isListFilledWithNumbersOneToNine,
+  doesListContainDuplicates,
+  isThisListComplete
 };
