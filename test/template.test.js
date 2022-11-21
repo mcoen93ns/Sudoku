@@ -5,6 +5,7 @@ const {
   isListFilledWithNumbersOneToNine,
   doesListContainDuplicates,
   isThisListComplete,
+  extractColumnFromSudokuBoard,
 } = require("../src/template");
 
 describe("This is a testsuite that describes the functionality to validate if a Sudoku board is complete and valid", () => {
@@ -89,21 +90,73 @@ describe("This is a testsuite that describes the functionality to validate if a 
         expect(isThisListComplete(sudokuList)).toEqual(false);
       });
     });
-    describe ("we have a Sudokou board where want to extract columns and we want to extract a list of numbers"), () =>  {
-      it(`[ [5,3,4,6,7,8,9,1,2],
-      [6, 7, 2, 1, 9, 5, 3, 4, 8],
+    //     describe("we have a Sudokou board where want to extract columns and we want to extract a list of numbers"), () =>  {
+    //       it(`[ [5,3,4,6,7,8,9,1,2],
+    //       [6, 7, 2, 1, 9, 5, 3, 4, 8],
+    //         [1, 9, 8, 3, 4, 2, 5, 6, 7],
+    //         [8, 5, 9, 7, 6, 1, 4, 2, 3],
+    //         [4, 2, 6, 8, 5, 3, 7, 9, 1],
+    //         [7, 1, 3, 9, 2, 4, 8, 5, 6],
+    //         [9, 6, 1, 5, 3, 7, 2, 8, 4],
+    //         [2, 8, 7, 4, 1, 9, 6, 3, 5],
+    //         [3, 4, 5, 2, 8, 6, 1, 7, 9]
+    // ]`, () => {
+    //   const sudokuBoard = [[5,3,4,6,7,8,9,1,2],
+    //       [6, 7, 2, 1, 9, 5, 3, 4, 8],
+    //         [1, 9, 8, 3, 4, 2, 5, 6, 7],
+    //         [8, 5, 9, 7, 6, 1, 4, 2, 3],
+    //         [4, 2, 6, 8, 5, 3, 7, 9, 1],
+    //         [7, 1, 3, 9, 2, 4, 8, 5, 6],
+    //         [9, 6, 1, 5, 3, 7, 2, 8, 4],
+    //         [2, 8, 7, 4, 1, 9, 6, 3, 5],
+    //         [3, 4, 5, 2, 8, 6, 1, 7, 9]]
+    //   const columnNumber = 1
+    //   expect(extractColumnFromSudokuBoard(sudokuBoard, columnNumber)).toEqual([5,3,4,6,7,8,9,1,2])
+    // });
+
+    //     }
+
+    describe(`We have a Sudokou board where want to extract columns as a list of numbers
+          This is the board that we will use in the testcases:
+                  [5, 3, 4, 6, 7, 8, 9, 1, 2],
+                  [6, 7, 2, 1, 9, 5, 3, 4, 8],
+                  [1, 9, 8, 3, 4, 2, 5, 6, 7],
+                  [8, 5, 9, 7, 6, 1, 4, 2, 3],
+                  [4, 2, 6, 8, 5, 3, 7, 9, 1],
+                  [7, 1, 3, 9, 2, 4, 8, 5, 6],
+                  [9, 6, 1, 5, 3, 7, 2, 8, 4],
+                  [2, 8, 7, 4, 1, 9, 6, 3, 5],
+                  [3, 4, 5, 2, 8, 6, 1, 7, 9] 
+          `, () => {
+      const sudokuBoard = [
+        [5, 3, 4, 6, 7, 8, 9, 1, 2],
+        [6, 7, 2, 1, 9, 5, 3, 4, 8],
         [1, 9, 8, 3, 4, 2, 5, 6, 7],
         [8, 5, 9, 7, 6, 1, 4, 2, 3],
         [4, 2, 6, 8, 5, 3, 7, 9, 1],
         [7, 1, 3, 9, 2, 4, 8, 5, 6],
         [9, 6, 1, 5, 3, 7, 2, 8, 4],
         [2, 8, 7, 4, 1, 9, 6, 3, 5],
-        [3, 4, 5, 2, 8, 6, 1, 7, 9] 
-]", () => {
-  
-});
-
-    }
-
+        [3, 4, 5, 2, 8, 6, 1, 7, 9],
+      ];
+      it("first column --> [5,6,1,8,4,7,9,2,3]", () => {
+        const columnNumber = 1;
+        expect(extractColumnFromSudokuBoard(sudokuBoard, columnNumber)).toEqual(
+          [5, 6, 1, 8, 4, 7, 9, 2, 3]
+        );
+      });
+      it("seventh column --> [9,3,5,4,7,8,2,6,1]", () => {
+        const columnNumber = 7;
+        expect(extractColumnFromSudokuBoard(sudokuBoard, columnNumber)).toEqual(
+          [9, 3, 5, 4, 7, 8, 2, 6, 1]
+        );
+      });
+      it("eleventh column --> []", () => {
+        const columnNumber = 11;
+        expect(extractColumnFromSudokuBoard(sudokuBoard, columnNumber)).toEqual(
+          []
+        );
+      });
+    });
   });
 });

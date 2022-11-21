@@ -31,12 +31,24 @@ function doesListContainDuplicates(sudokuRow) {
   return duplicates.length > 0;
 }
 
-function isThisListComplete(sudokuRow) { 
+function isThisListComplete(sudokuRow) {
   return (
     checkIfSudokuListContains9Elements(sudokuRow) &&
     isListFilledWithNumbers(sudokuRow) &&
     isListFilledWithNumbersOneToNine(sudokuRow) &&
-    doesListContainDuplicates(sudokuRow) === false)
+    doesListContainDuplicates(sudokuRow) === false
+  );
+}
+
+function extractColumnFromSudokuBoard(sudokuBoard, columnNumber) {
+  const sudokuBoardColumn = [];
+  const columnNumberCorrected = columnNumber - 1;
+  for (let index = 0; index < sudokuBoard.length; index += 1) {
+    const sudokuRow = sudokuBoard[index];
+    const columnElement = sudokuRow[columnNumberCorrected];
+    sudokuBoardColumn.push(columnElement);
+  }
+  return sudokuBoardColumn;
 }
 
 module.exports = {
@@ -45,5 +57,6 @@ module.exports = {
   isListFilledWithNumbers,
   isListFilledWithNumbersOneToNine,
   doesListContainDuplicates,
-  isThisListComplete
+  isThisListComplete,
+  extractColumnFromSudokuBoard,
 };
